@@ -1,1 +1,40 @@
-{     "devDependencies": {         "grunt-i18n-linter": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-grunt-i18n-linter",     "homepage": "https://github.com/npmtest/node-npmtest-grunt-i18n-linter",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-grunt-i18n-linter.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [grunt-i18n-linter (v0.0.3)](https://github.com/tictrac/grunt-i18n-linter)  [![npm package](https://img.shields.io/npm/v/npmtest-grunt-i18n-linter.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-grunt-i18n-linter) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-grunt-i18n-linter.svg)](https://travis-ci.org/npmtest/node-npmtest-grunt-i18n-linter)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "grunt-i18n-linter": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-grunt-i18n-linter",
+    "keywords": [
+        "coverage",
+        "test",
+        "grunt-i18n-linter"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_grunt_i18n_linter.js",
+    "name": "npmtest-grunt-i18n-linter",
+    "nameAlias": "npmtest_grunt_i18n_linter",
+    "nameOriginal": "npmtest-grunt-i18n-linter",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-grunt-i18n-linter.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
